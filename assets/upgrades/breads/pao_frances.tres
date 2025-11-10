@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=3 format=3 uid="uid://ch1vi2ywmobh"]
+
+[ext_resource type="Texture2D" uid="uid://d24wvxq1b1nut" path="res://icon.svg" id="1_2w6mw"]
+[ext_resource type="Script" uid="uid://b10qq2qpidafp" path="res://scripts/upgrade_data.gd" id="1_u4tgs"]
+
+[resource]
+script = ExtResource("1_u4tgs")
+name = "Pão Frances"
+description = "Um pao durinho"
+base_cost = 50
+bonus_value = 5.0
+icon = ExtResource("1_2w6mw")
+metadata/_custom_type_script = "uid://b10qq2qpidafp"

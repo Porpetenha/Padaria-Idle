@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhnhrqdprsmpw"]
+
+[ext_resource type="Texture2D" uid="uid://d24wvxq1b1nut" path="res://icon.svg" id="1_a0ma6"]
+[ext_resource type="Script" uid="uid://dwlqjdlmfptj5" path="res://scripts/upgrades.gd" id="1_suhmc"]
+
+[node name="vendas" type="PanelContainer"]
+offset_right = 236.0
+offset_bottom = 85.0
+script = ExtResource("1_suhmc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("1_a0ma6")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "name"
+
+[node name="level" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="buy" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "cost"
+
+[node name="lock" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="tooltip" type="PanelContainer" parent="CanvasLayer"]
+z_as_relative = false
+custom_minimum_size = Vector2(200, 0)
+offset_right = 1.0
+
+[node name="tooltip_desc" type="RichTextLabel" parent="CanvasLayer/tooltip"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/buy" to="." method="_on_buy_pressed"]

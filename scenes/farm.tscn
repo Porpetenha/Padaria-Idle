@@ -1,0 +1,113 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ce5kurkaoo1"]
+
+[ext_resource type="Script" uid="uid://nd2d6fcgqc7v" path="res://scripts/farm.gd" id="1_kjpqf"]
+[ext_resource type="PackedScene" uid="uid://cxtuq458mtcf" path="res://assets/prefab/soil.tscn" id="2_kjpqf"]
+
+[node name="farm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kjpqf")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="status_bar" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/status_bar"]
+layout_mode = 2
+
+[node name="money" type="RichTextLabel" parent="VBoxContainer/status_bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/status_bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="shop" type="Button" parent="VBoxContainer/status_bar/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Loja"
+
+[node name="delivery" type="Button" parent="VBoxContainer/status_bar/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Entregas"
+
+[node name="dimenssion" type="Button" parent="VBoxContainer/status_bar/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dimensões"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="soil_plant" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer"]
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="soil" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
+layout_mode = 2
+
+[node name="soil3" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
+layout_mode = 2
+
+[node name="soil4" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
+layout_mode = 2
+
+[node name="soil5" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
+layout_mode = 2
+
+[node name="soil2" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
+layout_mode = 2
+
+[node name="action_buttons" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/status_bar/HBoxContainer/HBoxContainer/shop" to="." method="_on_shop_pressed"]

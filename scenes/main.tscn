@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=3 uid="uid://dppjii4f5yke0"]
+
+[ext_resource type="Script" uid="uid://bvxrp5uw4aq2s" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://d24wvxq1b1nut" path="res://icon.svg" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://lfo0464gwutn" path="res://scripts/upgrade_manager.gd" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://dhnhrqdprsmpw" path="res://assets/prefab/upgrades.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://b10qq2qpidafp" path="res://scripts/upgrade_data.gd" id="5_tipki"]
+[ext_resource type="Resource" uid="uid://rsiij8xb2eks" path="res://assets/upgrades/breads/pao_de_forma.tres" id="6_85g3d"]
+[ext_resource type="Resource" uid="uid://cdxkossvbmc7u" path="res://assets/upgrades/breads/pao_bananinha.tres" id="7_85g3d"]
+[ext_resource type="Resource" uid="uid://ch1vi2ywmobh" path="res://assets/upgrades/breads/pao_frances.tres" id="7_choun"]
+[ext_resource type="Resource" uid="uid://bxpi3yca6ltfr" path="res://assets/upgrades/breads/croassint.tres" id="8_tipki"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5qli")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="status_bar" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/status_bar"]
+layout_mode = 2
+
+[node name="money" type="RichTextLabel" parent="VBoxContainer/status_bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/status_bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="farm" type="Button" parent="VBoxContainer/status_bar/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fazenda"
+
+[node name="delivery" type="Button" parent="VBoxContainer/status_bar/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Entregas"
+
+[node name="dimenssion" type="Button" parent="VBoxContainer/status_bar/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dimensões"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="forno" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/forno"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 64
+
+[node name="click_forno" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_0wfyh")
+
+[node name="bread_production" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 10
+text = "Produção:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="separador" type="Control" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="vitrine" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_o6xl0")
+upgrade_scene = ExtResource("3_sugp2")
+paes_data = Array[ExtResource("5_tipki")]([ExtResource("8_tipki"), ExtResource("7_85g3d"), ExtResource("6_85g3d"), ExtResource("7_choun")])
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine"]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Pães" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine/TabContainer/Pães"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine/TabContainer/Pães/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine/TabContainer/Pães/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Upgrades" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine/TabContainer/Upgrades"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine/TabContainer/Upgrades/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine/TabContainer/Upgrades/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/status_bar/HBoxContainer/HBoxContainer/farm" to="." method="_on_farm_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer/click_forno" to="." method="_on_click_forno_pressed"]
