@@ -90,24 +90,34 @@ vertical_scroll_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
 
 [node name="soil" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
-layout_mode = 2
-
-[node name="soil3" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
-layout_mode = 2
-
-[node name="soil4" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
-layout_mode = 2
-
-[node name="soil5" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
 layout_mode = 2
 
 [node name="soil2" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
 layout_mode = 2
 
+[node name="soil3" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
+layout_mode = 2
+
 [node name="action_buttons" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/action_buttons"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/action_buttons/VBoxContainer"]
+layout_mode = 2
+text = "Bag
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/action_buttons/VBoxContainer"]
+layout_mode = 2
+text = "Upgrades
+"
 
 [connection signal="pressed" from="VBoxContainer/status_bar/HBoxContainer/HBoxContainer/shop" to="." method="_on_shop_pressed"]
