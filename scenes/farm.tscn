@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_kjpqf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,19 +104,16 @@ layout_mode = 2
 [node name="soil3" parent="VBoxContainer/MarginContainer/HBoxContainer/soil_plant/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_kjpqf")]
 layout_mode = 2
 
-[node name="action_buttons" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="action_buttons" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/action_buttons"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/action_buttons/VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/action_buttons"]
 layout_mode = 2
 text = "Bag
 "
 
-[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/action_buttons/VBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/action_buttons"]
 layout_mode = 2
 text = "Upgrades
 "

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dppjii4f5yke0"]
+[gd_scene load_steps=11 format=3 uid="uid://dppjii4f5yke0"]
 
 [ext_resource type="Script" uid="uid://bvxrp5uw4aq2s" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://d24wvxq1b1nut" path="res://icon.svg" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://w71ntir1y6lr" path="res://scripts/click_animation.gd" id="3_choun"]
 [ext_resource type="Script" uid="uid://lfo0464gwutn" path="res://scripts/upgrade_manager.gd" id="3_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dhnhrqdprsmpw" path="res://assets/prefab/upgrades.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://b10qq2qpidafp" path="res://scripts/upgrade_data.gd" id="5_tipki"]
@@ -94,6 +95,7 @@ theme_override_constants/separation = 64
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("2_0wfyh")
+script = ExtResource("3_choun")
 
 [node name="bread_production" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer"]
 texture_filter = 1
