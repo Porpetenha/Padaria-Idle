@@ -5,11 +5,13 @@ extends Control
 @onready var bread_production: Label = $VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer/bread_production
 
 #Váriaveis
-var bread_click: int = 0
-var bread_idle: int = 0
+var bread_click: float = 0
+var bread_idle: float = 0
 var idle_timer : Timer
 
 func _ready():
+	SaveAndLoad.load_data()
+	
 	bread_click = bread_click
 	
 	#Set timer para gerar idle
@@ -29,7 +31,7 @@ func _process(_delta: float) -> void:
 	
 	#Qando clicar no botão do forno vai produzir dinherio por click
 func _on_click_forno_pressed() -> void:
-	Global.money += bread_click
+	Global.money += int(bread_click)
 
 	#Função para a geração idle de dinheiro
 func _on_idle_timer_timeout() -> void:
@@ -44,6 +46,7 @@ func production_calc():
 		if pao.upgrade_type == UpgradeData.upgrade_type_list.BREAD:
 			bread_idle += int(pao.bonus_value) * pao.level
 
-func _on_farm_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/farm.tscn")
+func _on_button_pressed() -> void:
+	pass
+	SaveAndLoad.save_data()
 	

@@ -8,6 +8,5 @@ script = ExtResource("1_u4tgs")
 name = "Pão Frances"
 description = "Um pao durinho"
 base_cost = 50
-bonus_value = 5.0
 icon = ExtResource("1_2w6mw")
 metadata/_custom_type_script = "uid://b10qq2qpidafp"

@@ -7,6 +7,8 @@
 script = ExtResource("1_wdwnd")
 name = "Pão de forma"
 description = "Macio e em fatias."
+base_cost = 10
+bonus_value = 1.0
 icon = ExtResource("1_q4sf3")
 locked = false
 metadata/_custom_type_script = "uid://b10qq2qpidafp"

@@ -69,6 +69,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Dimensões"
 
+[node name="Button" type="Button" parent="VBoxContainer/status_bar/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -96,6 +100,8 @@ layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("2_0wfyh")
 script = ExtResource("3_choun")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer/click_forno"]
 
 [node name="bread_production" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer"]
 texture_filter = 1
@@ -160,5 +166,5 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 
-[connection signal="pressed" from="VBoxContainer/status_bar/HBoxContainer/HBoxContainer/farm" to="." method="_on_farm_pressed"]
+[connection signal="pressed" from="VBoxContainer/status_bar/HBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer/click_forno" to="." method="_on_click_forno_pressed"]

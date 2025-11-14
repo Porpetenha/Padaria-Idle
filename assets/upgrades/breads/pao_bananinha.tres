@@ -7,6 +7,5 @@
 script = ExtResource("1_evwo3")
 name = "Pão bananinha"
 base_cost = 100
-bonus_value = 10.0
 icon = ExtResource("1_3rvx1")
 metadata/_custom_type_script = "uid://b10qq2qpidafp"

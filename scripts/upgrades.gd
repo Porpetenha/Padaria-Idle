@@ -22,6 +22,7 @@ func setup(data: UpgradeData) -> void:
 	# Configura visual
 	icon.texture = data.icon
 	name_label.text = data.name
+	level_label.text = str(data.level)
 	buy_button.text = str(data.base_cost)
 
 	#Para bloquear o upgrade

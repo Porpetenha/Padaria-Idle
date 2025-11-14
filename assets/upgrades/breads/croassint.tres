@@ -7,5 +7,6 @@
 script = ExtResource("1_ediug")
 name = "Croassint"
 base_cost = 100
+bonus_value = 5.0
 icon = ExtResource("1_opvyc")
 metadata/_custom_type_script = "uid://b10qq2qpidafp"

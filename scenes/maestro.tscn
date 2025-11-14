@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgnvdpslvnqdp"]
+
+[ext_resource type="Script" uid="uid://ldjva0e7sq0g" path="res://scripts/maestro.gd" id="1_wxmnm"]
+[ext_resource type="PackedScene" uid="uid://8ce5kurkaoo1" path="res://scenes/farm.tscn" id="2_0tyja"]
+[ext_resource type="PackedScene" uid="uid://dppjii4f5yke0" path="res://scenes/main.tscn" id="3_bsw31"]
+
+[node name="Maestro" type="Node"]
+script = ExtResource("1_wxmnm")
+
+[node name="main" parent="." instance=ExtResource("3_bsw31")]
+
+[node name="farm" parent="." instance=ExtResource("2_0tyja")]
+visible = false
+
+[connection signal="pressed" from="main/VBoxContainer/status_bar/HBoxContainer/HBoxContainer/farm" to="." method="_on_farm_pressed"]
+[connection signal="pressed" from="farm/VBoxContainer/status_bar/HBoxContainer/HBoxContainer/shop" to="." method="_on_shop_pressed"]
+
+[editable path="main"]
+[editable path="farm"]

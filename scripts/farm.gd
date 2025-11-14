@@ -4,6 +4,3 @@ extends Control
 
 func _process(delta: float) -> void:
 	money.text = str(Global.money)
-	
-func _on_shop_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn")

@@ -15,12 +15,13 @@ enum upgrade_type_list {
 @export var upgrade_type: upgrade_type_list = upgrade_type_list.BREAD
 
 @export_subgroup("Custo")
-@export var base_cost: int = 10
-@export var cost_multp: float = 1.2
+@export var base_cost: int = 0
+@export var cost_multp: float = 0
 
 @export_subgroup("Bonus")
-@export var bonus_value: float = 1.0
+@export var bonus_value: float = 0
 var level:int = 0
+
 @export_group("Visual")
 @export var icon: Texture2D
 @export var locked: bool = true

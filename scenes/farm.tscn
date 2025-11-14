@@ -13,7 +13,6 @@ grow_vertical = 2
 script = ExtResource("1_kjpqf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,5 +116,3 @@ text = "Bag
 layout_mode = 2
 text = "Upgrades
 "
-
-[connection signal="pressed" from="VBoxContainer/status_bar/HBoxContainer/HBoxContainer/shop" to="." method="_on_shop_pressed"]

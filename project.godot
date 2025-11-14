@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Padaria Idle"
-run/main_scene="uid://dppjii4f5yke0"
+run/main_scene="uid://cgnvdpslvnqdp"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://scripts/global.gd"
+SaveAndLoad="*res://scripts/save_and_load.gd"
 
 [display]
 

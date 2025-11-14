@@ -13,6 +13,9 @@ var upgrade_instances: Array[Node] = []
 func _ready() -> void:
 	Global.paes_data = paes_data
 	Global.upgrades_data = upgrades_data
+	SaveAndLoad.data_loaded.connect(_on_data_loaded)
+	
+func _on_data_loaded():
 	create_items()
 
 func create_items() -> void:
@@ -20,7 +23,7 @@ func create_items() -> void:
 	paes_data.sort_custom(func(a, b): return a.base_cost < b.base_cost)
 	upgrades_data.sort_custom(func(a, b): return a.base_cost < b.base_cost)
 	
-	#Cia os pães
+	#Cria os pães
 	for data in paes_data:
 		var item = upgrade_scene.instantiate()
 		paes_container.add_child(item)
