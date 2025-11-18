@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=3 format=3 uid="uid://d3vij3ya5me4i"]
+
+[ext_resource type="Texture2D" uid="uid://d24wvxq1b1nut" path="res://icon.svg" id="1_dgd5y"]
+[ext_resource type="Script" uid="uid://b10qq2qpidafp" path="res://scripts/upgrade_data.gd" id="1_pnomu"]
+
+[resource]
+script = ExtResource("1_pnomu")
+name = "Geleia"
+upgrade_type = 2
+base_cost = 100
+cost_multp = 1.2
+icon = ExtResource("1_dgd5y")
+locked = false
+metadata/_custom_type_script = "uid://b10qq2qpidafp"

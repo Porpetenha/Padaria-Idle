@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvfqnqey08vkh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_olf61"]
+font_size = 20
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 0.81960785)
+shadow_offset = Vector2(0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 10.0
+offset_bottom = 23.0
+text = "1"
+label_settings = SubResource("LabelSettings_olf61")
+horizontal_alignment = 1
+vertical_alignment = 1

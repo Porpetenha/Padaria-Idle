@@ -4,7 +4,8 @@ extends Resource
 enum upgrade_type_list {
 	BREAD,     
 	CLICK_UPGRADE, 
-	IDLE_UPGRADE  
+	IDLE_UPGRADE,
+	BREAD_UPGRADE  
 }
 
 @export var name: String = "Nome do Upgrade"
@@ -31,7 +32,10 @@ var level:int = 0
 
 #Idle:
 	#Aumenta a protuçao te tudo em x%
+	#Ganhos afk, inicia com uma quantidade menor que 100% de ganho afk e vai aumentando conforme vai comprando mais upgrades dese tipo
 #Click:
 	#Jackpot: uma pequena chance de um click dar uma grande ganho
-#Produção:
+	#Uma porcentagem da produção total idle representa um incremento nos ganhos por click
+#Pães:
 	#Cada pão ou grupo de pão teria um aumento de % no que ele gera
+	#

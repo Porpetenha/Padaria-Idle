@@ -1,14 +1,18 @@
 extends Node
 
 const save: String = "user://save.json"
+var save_time = int(Time.get_unix_time_from_system())
 
 func save_data():
+	save_time = int(Time.get_unix_time_from_system())
 	#Criar dicionário com os níveis dos upgrades
 	var upgrades_levels = {}
 	for upgrade in Global.paes_data:
 		upgrades_levels[upgrade.name] = upgrade.level
-		
+	
+	
 	var data = {
+		"save_time" : save_time,
 		"money" : Global.money,
 		"upgrades" : upgrades_levels
 	}
@@ -50,6 +54,7 @@ func load_data():
 	
 	var data = json.data
 	
+	save_time = data.get("save_time", int(Time.get_unix_time_from_system())) 
 	Global.money = data.get("money", 0)
 	
 	if data.has("upgrades"):
@@ -57,5 +62,4 @@ func load_data():
 		for upgrade in Global.paes_data:
 			if upgrades_levels.has(upgrade.name):
 				upgrade.level = upgrades_levels[upgrade.name]
-
 	data_loaded.emit()

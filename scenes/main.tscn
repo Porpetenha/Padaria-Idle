@@ -1,15 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dppjii4f5yke0"]
+[gd_scene load_steps=13 format=3 uid="uid://dppjii4f5yke0"]
 
 [ext_resource type="Script" uid="uid://bvxrp5uw4aq2s" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://d24wvxq1b1nut" path="res://icon.svg" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://w71ntir1y6lr" path="res://scripts/click_animation.gd" id="3_choun"]
 [ext_resource type="Script" uid="uid://lfo0464gwutn" path="res://scripts/upgrade_manager.gd" id="3_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dhnhrqdprsmpw" path="res://assets/prefab/upgrades.tscn" id="3_sugp2"]
+[ext_resource type="AudioStream" uid="uid://b1nwojbslmiul" path="res://assets/sounds/fire.mp3" id="4_ya4ey"]
 [ext_resource type="Script" uid="uid://b10qq2qpidafp" path="res://scripts/upgrade_data.gd" id="5_tipki"]
 [ext_resource type="Resource" uid="uid://rsiij8xb2eks" path="res://assets/upgrades/breads/pao_de_forma.tres" id="6_85g3d"]
 [ext_resource type="Resource" uid="uid://cdxkossvbmc7u" path="res://assets/upgrades/breads/pao_bananinha.tres" id="7_85g3d"]
 [ext_resource type="Resource" uid="uid://ch1vi2ywmobh" path="res://assets/upgrades/breads/pao_frances.tres" id="7_choun"]
 [ext_resource type="Resource" uid="uid://bxpi3yca6ltfr" path="res://assets/upgrades/breads/croassint.tres" id="8_tipki"]
+[ext_resource type="Resource" uid="uid://d3vij3ya5me4i" path="res://assets/upgrades/bonus/geleia.tres" id="12_eb6dy"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -101,7 +103,8 @@ size_flags_vertical = 3
 texture_normal = ExtResource("2_0wfyh")
 script = ExtResource("3_choun")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer/click_forno"]
+[node name="fire_sound" type="AudioStreamPlayer2D" parent="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer/click_forno"]
+stream = ExtResource("4_ya4ey")
 
 [node name="bread_production" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/forno/VBoxContainer"]
 texture_filter = 1
@@ -121,6 +124,7 @@ size_flags_horizontal = 3
 script = ExtResource("3_o6xl0")
 upgrade_scene = ExtResource("3_sugp2")
 paes_data = Array[ExtResource("5_tipki")]([ExtResource("8_tipki"), ExtResource("7_85g3d"), ExtResource("6_85g3d"), ExtResource("7_choun")])
+upgrades_data = Array[ExtResource("5_tipki")]([ExtResource("12_eb6dy")])
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/vitrine"]
 layout_mode = 2
