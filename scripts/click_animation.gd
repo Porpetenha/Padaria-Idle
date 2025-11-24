@@ -51,7 +51,7 @@ func click_pop_up():
 	add_child(popup)
 	var label = popup.get_child(0)
 	
-	label.text = "+" + str(Global.bread_click)
+	label.text = "+" + Global.format_number(Global.bread_click)
 	
 	label.global_position = global_position + (size / 2) - (label.size / 2)
 	

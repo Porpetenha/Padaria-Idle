@@ -1,14 +1,13 @@
 [gd_resource type="Resource" script_class="UpgradeData" load_steps=3 format=3 uid="uid://rsiij8xb2eks"]
 
 [ext_resource type="Texture2D" uid="uid://d24wvxq1b1nut" path="res://icon.svg" id="1_q4sf3"]
-[ext_resource type="Script" uid="uid://b10qq2qpidafp" path="res://scripts/upgrade_data.gd" id="1_wdwnd"]
+[ext_resource type="Script" uid="uid://b10qq2qpidafp" path="res://scripts/custom resources/upgrade_data.gd" id="1_wdwnd"]
 
 [resource]
 script = ExtResource("1_wdwnd")
 name = "Pão de forma"
 description = "Macio e em fatias."
-base_cost = 10
-bonus_value = 1.0
+cost_multp = 1.5
 icon = ExtResource("1_q4sf3")
 locked = false
 metadata/_custom_type_script = "uid://b10qq2qpidafp"
